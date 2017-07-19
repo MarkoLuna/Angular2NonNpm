@@ -1,0 +1,18 @@
+<div>
+    <label>ID</label>
+    <input type="text" [(ngModel)]="post.id" value="{{post.id}}" name="id"/>
+    <label>User Id</label>
+    <input type="text" [(ngModel)]="post.userId" value="{{post.userId}}" name="userId"/>
+    <label>Title</label>
+    <input type="text" [(ngModel)]="post.title" value="{{post.title}}" name="title"/>
+    <label>Body</label>
+    <input type="text" [(ngModel)]="post.body" value="{{post.body}}" name="body"/>
+    <button (click) = "addPost()">Add</button>    
+</div>
+
+<h3>Post List</h3>
+<div *ngFor="#p of posts">
+    <p>USER_ID: {{ p.userId }} - ID: {{ p.id }} - TITLE: {{ p.title }}</p>
+    <p>BODY: {{ p.body }}</p>
+    <button (click) = "deletePost(p.id)">Del</button><br/><br/>
+</div>

@@ -1,0 +1,13 @@
+<div *ngIf="1==0">
+    <h3>Online Contacts</h3>
+    <div class="online-contact" *ngIf="onlineContacts?.length > 0" *ngFor="#con of onlineContacts">
+        <!--img [src]="con.imgUrl" class="img-circle online-contact-img"-->
+        {{ con.name }}
+    </div>
+
+    <h3>Contacts</h3>
+    <div class="online-contact" *ngFor="#con of userContacts | async" (click)="getContact(con)">
+        <!--img [src]="con.imgUrl" class="img-circle offline-contact-img"-->
+        {{ con.name }}
+    </div>
+</div>
